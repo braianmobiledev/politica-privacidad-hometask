@@ -8,7 +8,7 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             color: #333;
@@ -53,6 +53,29 @@
             border-radius: 5px;
             margin-top: 20px;
         }
+        .international-notice {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .rights-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .rights-table th, .rights-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .rights-table th {
+            background-color: #3498db;
+            color: white;
+        }
+        .rights-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
@@ -60,7 +83,11 @@
         <h1>POLÍTICA DE PRIVACIDAD - HOME TASK MANAGER</h1>
         <p class="update-date"><strong>Fecha de última actualización:</strong> 4 de noviembre de 2025</p>
         
-        <p>Esta Política de Privacidad describe cómo <strong>Home Task Manager</strong> ("nosotros", "nuestra" o "la aplicación") recopila, utiliza y protege su información personal cuando utiliza nuestra aplicación móvil.</p>
+        <div class="international-notice">
+            <strong>🌍 Alcance Internacional:</strong> Esta política de privacidad cumple con las normativas de protección de datos de múltiples jurisdicciones, incluyendo GDPR (UE/EEE), CCPA/CPRA (California), LGPD (Brasil), PIPEDA (Canadá), y la Ley 1581 de 2012 (Colombia), entre otras.
+        </div>
+
+        <p>Esta Política de Privacidad describe cómo <strong>Home Task Manager</strong> ("nosotros", "nuestra" o "la aplicación") recopila, utiliza, procesa y protege su información personal cuando utiliza nuestra aplicación móvil, independientemente de su ubicación geográfica.</p>
 
         <h2>1. INFORMACIÓN QUE RECOPILAMOS</h2>
         
@@ -69,11 +96,11 @@
         <ul>
             <li><strong>Nombre completo</strong></li>
             <li><strong>Dirección de correo electrónico</strong></li>
-            <li><strong>Contraseña</strong> (almacenada de forma cifrada)</li>
+            <li><strong>Contraseña</strong> (almacenada de forma cifrada mediante Firebase Authentication)</li>
         </ul>
 
         <h3>1.2 Información generada por el uso de la aplicación</h3>
-        <p>Durante el uso de la aplicación, almacenamos:</p>
+        <p>Durante el uso de la aplicación, almacenamos el contenido que usted crea:</p>
         <ul>
             <li><strong>Tareas creadas:</strong> descripción, fecha, hora y estado de completado</li>
             <li><strong>Planificación de comidas:</strong> menús y horarios de comidas programadas</li>
@@ -81,120 +108,306 @@
         </ul>
 
         <h3>1.3 Información técnica automática</h3>
-        <p>La aplicación recopila automáticamente:</p>
+        <p>La aplicación recopila automáticamente datos técnicos limitados necesarios para su funcionamiento:</p>
         <ul>
-            <li><strong>Datos de conexión:</strong> estado de conexión a internet</li>
-            <li><strong>Identificadores de dispositivo:</strong> para el funcionamiento de notificaciones y anuncios</li>
-            <li><strong>Datos de uso de anuncios:</strong> interacciones con anuncios de video para recompensas</li>
+            <li><strong>Datos de conexión:</strong> estado de conexión a internet (únicamente para sincronización)</li>
+            <li><strong>Identificadores de dispositivo:</strong> tokens de notificaciones push y publicidad</li>
+            <li><strong>Datos de interacción con anuncios:</strong> visualización y completado de anuncios de video recompensados</li>
+            <li><strong>Datos de uso básicos:</strong> eventos de uso de funcionalidades (sin contenido personal)</li>
         </ul>
 
-        <h2>2. CÓMO UTILIZAMOS SU INFORMACIÓN</h2>
-        <p>Utilizamos la información recopilada para:</p>
+        <h2>2. BASE LEGAL PARA EL PROCESAMIENTO DE DATOS</h2>
+        
+        <h3>2.1 Para usuarios de la Unión Europea (GDPR)</h3>
+        <p>Procesamos sus datos personales bajo las siguientes bases legales:</p>
+        <ul>
+            <li><strong>Consentimiento:</strong> Al crear una cuenta, usted consiente el procesamiento de sus datos</li>
+            <li><strong>Ejecución de contrato:</strong> Para proporcionar los servicios de la aplicación</li>
+            <li><strong>Interés legítimo:</strong> Para mejorar nuestros servicios y prevenir fraudes</li>
+            <li><strong>Cumplimiento legal:</strong> Cuando sea requerido por ley</li>
+        </ul>
+
+        <h3>2.2 Para usuarios de California (CCPA/CPRA)</h3>
+        <p>Bajo la CCPA y CPRA, los residentes de California tienen derecho a conocer qué información personal recopilamos, compartimos o vendemos. <strong>No vendemos su información personal a terceros.</strong></p>
+
+        <h3>2.3 Para usuarios de Brasil (LGPD)</h3>
+        <p>Cumplimos con la Lei Geral de Proteção de Dados (LGPD) procesando datos únicamente con consentimiento explícito o para cumplir con obligaciones contractuales.</p>
+
+        <h3>2.4 Para usuarios de Canadá (PIPEDA)</h3>
+        <p>Recopilamos, usamos y divulgamos información personal únicamente con su conocimiento y consentimiento, excepto cuando la ley lo permita.</p>
+
+        <h2>3. CÓMO UTILIZAMOS SU INFORMACIÓN</h2>
+        <p>Utilizamos la información recopilada exclusivamente para los siguientes propósitos:</p>
         <ul>
             <li><strong>Proporcionar el servicio:</strong> gestionar su cuenta y sincronizar sus datos entre dispositivos</li>
             <li><strong>Funcionalidad de la aplicación:</strong> permitir la creación, edición y eliminación de tareas, comidas y listas de compra</li>
             <li><strong>Notificaciones:</strong> enviar recordatorios de tareas y eventos programados</li>
-            <li><strong>Publicidad:</strong> mostrar anuncios de video con recompensas a través de Google AdMob</li>
-            <li><strong>Mejora del servicio:</strong> analizar el uso de la aplicación para mejorar la experiencia del usuario</li>
-            <li><strong>Seguridad:</strong> proteger su cuenta y prevenir fraudes o abusos</li>
+            <li><strong>Publicidad personalizada:</strong> mostrar anuncios de video con recompensas a través de Google AdMob</li>
+            <li><strong>Mejora del servicio:</strong> analizar patrones de uso agregados para mejorar la experiencia del usuario</li>
+            <li><strong>Seguridad:</strong> proteger su cuenta, prevenir fraudes y abusos del servicio</li>
+            <li><strong>Comunicaciones:</strong> informarle sobre actualizaciones importantes de la aplicación o cambios en nuestras políticas</li>
         </ul>
+        <p><strong>No utilizamos sus datos personales para ningún otro propósito sin su consentimiento explícito.</strong></p>
 
-        <h2>3. PERMISOS DE LA APLICACIÓN</h2>
-        <p>Home Task Manager requiere los siguientes permisos en su dispositivo Android:</p>
+        <h2>4. PERMISOS DE LA APLICACIÓN</h2>
+        <p>Home Task Manager requiere los siguientes permisos en su dispositivo Android, todos justificados por funcionalidades específicas:</p>
         <ul>
-            <li><strong>INTERNET:</strong> necesario para sincronizar datos con nuestros servidores</li>
-            <li><strong>ACCESS_NETWORK_STATE:</strong> verificar conectividad para sincronización</li>
-            <li><strong>POST_NOTIFICATIONS:</strong> enviar notificaciones de recordatorios de tareas</li>
+            <li><strong>INTERNET:</strong> necesario para sincronizar datos con Firebase y mostrar anuncios</li>
+            <li><strong>ACCESS_NETWORK_STATE:</strong> verificar conectividad antes de intentar sincronización</li>
+            <li><strong>POST_NOTIFICATIONS:</strong> enviar notificaciones de recordatorios de tareas programadas</li>
             <li><strong>SCHEDULE_EXACT_ALARM y USE_EXACT_ALARM:</strong> programar alarmas precisas para recordatorios</li>
-            <li><strong>RECEIVE_BOOT_COMPLETED:</strong> restaurar alarmas después de reiniciar el dispositivo</li>
-            <li><strong>VIBRATE:</strong> hacer vibrar el dispositivo para notificaciones</li>
+            <li><strong>RECEIVE_BOOT_COMPLETED:</strong> restaurar alarmas programadas después de reiniciar el dispositivo</li>
+            <li><strong>VIBRATE:</strong> hacer vibrar el dispositivo para notificaciones de recordatorios</li>
         </ul>
+        <p><strong>Importante:</strong> No solicitamos permisos de ubicación, cámara, micrófono, contactos ni acceso a archivos.</p>
 
-        <h2>4. SERVICIOS DE TERCEROS</h2>
-        <p>Utilizamos los siguientes servicios de terceros que pueden recopilar información:</p>
+        <h2>5. SERVICIOS DE TERCEROS Y TRANSFERENCIAS INTERNACIONALES</h2>
         
-        <h3>4.1 Firebase (Google LLC)</h3>
-        <p>Utilizamos Firebase para:</p>
+        <h3>5.1 Firebase (Google LLC) - Estados Unidos</h3>
+        <p>Utilizamos Firebase (propiedad de Google LLC) para:</p>
         <ul>
             <li><strong>Firebase Authentication:</strong> gestión segura de cuentas de usuario</li>
-            <li><strong>Cloud Firestore:</strong> almacenamiento en la nube de tareas, comidas y listas de compra</li>
+            <li><strong>Cloud Firestore:</strong> almacenamiento cifrado de tareas, comidas y listas de compra</li>
             <li><strong>Firebase Cloud Messaging:</strong> envío de notificaciones push</li>
         </ul>
-        <p>Firebase puede recopilar datos de uso y diagnóstico. Para más información, consulte la <a href="https://firebase.google.com/support/privacy" target="_blank">Política de Privacidad de Firebase</a>.</p>
+        <p>Los servidores de Firebase se encuentran en Estados Unidos. Google cumple con el EU-U.S. Data Privacy Framework para transferencias internacionales. Para más información: <a href="https://firebase.google.com/support/privacy" target="_blank">Política de Privacidad de Firebase</a>.</p>
 
-        <h3>4.2 Google AdMob</h3>
+        <h3>5.2 Google AdMob - Estados Unidos</h3>
         <p>Mostramos anuncios de video con recompensas a través de AdMob. AdMob puede recopilar:</p>
         <ul>
-            <li>Identificadores publicitarios</li>
-            <li>Datos de interacción con anuncios</li>
-            <li>Información del dispositivo</li>
+            <li>Identificadores publicitarios (GAID en Android)</li>
+            <li>Datos de interacción con anuncios (impresiones, clics, completados)</li>
+            <li>Información del dispositivo (modelo, sistema operativo, idioma)</li>
+            <li>Dirección IP aproximada (para geolocalización de anuncios)</li>
         </ul>
-        <p>Para más información, consulte la <a href="https://support.google.com/admob/answer/6128543" target="_blank">Política de Privacidad de AdMob</a>.</p>
+        <p>AdMob cumple con GDPR, CCPA y otras normativas. Más información: <a href="https://support.google.com/admob/answer/6128543" target="_blank">Política de Privacidad de AdMob</a> y <a href="https://policies.google.com/technologies/partner-sites" target="_blank">Cómo usa Google los datos</a>.</p>
 
-        <h2>5. COMPARTIR INFORMACIÓN</h2>
-        <p><strong>No vendemos ni alquilamos su información personal a terceros.</strong></p>
-        <p>Podemos compartir su información únicamente en los siguientes casos:</p>
+        <h3>5.3 Salvaguardas para transferencias internacionales</h3>
+        <p>Cuando sus datos se transfieren fuera de su país de residencia, implementamos salvaguardas apropiadas incluyendo:</p>
         <ul>
-            <li><strong>Servicios de terceros:</strong> con Firebase y AdMob según lo descrito anteriormente</li>
-            <li><strong>Cumplimiento legal:</strong> cuando sea requerido por ley o autoridades competentes</li>
-            <li><strong>Protección de derechos:</strong> para proteger nuestros derechos legales o la seguridad de los usuarios</li>
+            <li>Cláusulas contractuales estándar aprobadas por la Comisión Europea (para usuarios de la UE)</li>
+            <li>Certificación bajo el EU-U.S. Data Privacy Framework</li>
+            <li>Medidas de seguridad técnicas y organizativas equivalentes</li>
         </ul>
 
-        <h2>6. RETENCIÓN DE DATOS</h2>
-        <p>Conservamos su información personal mientras su cuenta esté activa. Si elimina su cuenta:</p>
+        <h2>6. COMPARTIR Y VENTA DE INFORMACIÓN</h2>
+        <p><strong>No vendemos, alquilamos ni intercambiamos su información personal con terceros con fines comerciales.</strong></p>
+        <p>Compartimos información únicamente en los siguientes casos limitados:</p>
         <ul>
-            <li>Sus datos personales serán eliminados dentro de los 30 días siguientes</li>
-            <li>Algunos datos pueden conservarse por obligaciones legales o resolución de disputas</li>
+            <li><strong>Proveedores de servicios esenciales:</strong> Firebase y AdMob según lo descrito anteriormente, bajo estrictos acuerdos de procesamiento de datos</li>
+            <li><strong>Cumplimiento legal:</strong> cuando sea requerido por ley, orden judicial o proceso legal válido</li>
+            <li><strong>Protección de derechos:</strong> para proteger nuestros derechos legales, propiedad o seguridad, o la de nuestros usuarios</li>
+            <li><strong>Transferencia empresarial:</strong> en caso de fusión, adquisición o venta de activos (los usuarios serán notificados previamente)</li>
         </ul>
 
-        <h2>7. SEGURIDAD DE LOS DATOS</h2>
-        <p>Implementamos medidas de seguridad técnicas y organizativas para proteger su información:</p>
+        <h2>7. RETENCIÓN Y ELIMINACIÓN DE DATOS</h2>
+        <p>Conservamos su información personal únicamente durante el tiempo necesario para cumplir los propósitos descritos:</p>
         <ul>
-            <li>Cifrado de contraseñas mediante Firebase Authentication</li>
-            <li>Conexiones seguras SSL/TLS</li>
-            <li>Acceso restringido a datos personales</li>
-            <li>Servidores seguros de Google Cloud Platform</li>
+            <li><strong>Datos de cuenta activa:</strong> mientras su cuenta permanezca activa</li>
+            <li><strong>Tras eliminación de cuenta:</strong> sus datos personales serán eliminados permanentemente dentro de los 30 días</li>
+            <li><strong>Datos de copias de seguridad:</strong> pueden conservarse hasta 90 días adicionales en copias de seguridad</li>
+            <li><strong>Datos agregados y anonimizados:</strong> pueden conservarse indefinidamente para análisis estadísticos (sin identificar usuarios individuales)</li>
+            <li><strong>Datos para cumplimiento legal:</strong> pueden conservarse más tiempo si es legalmente requerido (ej. obligaciones fiscales o regulatorias)</li>
         </ul>
-        <p>Sin embargo, ningún método de transmisión por internet es 100% seguro.</p>
+        <p><strong>Para eliminar su cuenta:</strong> acceda a Configuración > Cuenta > Eliminar Cuenta dentro de la aplicación, o contáctenos en braian7410@gmail.com</p>
 
-        <h2>8. SUS DERECHOS</h2>
-        <p>Usted tiene derecho a:</p>
+        <h2>8. SEGURIDAD DE LOS DATOS</h2>
+        <p>Implementamos múltiples capas de seguridad técnicas y organizativas para proteger su información:</p>
         <ul>
-            <li><strong>Acceder</strong> a sus datos personales</li>
-            <li><strong>Rectificar</strong> información inexacta</li>
-            <li><strong>Eliminar</strong> su cuenta y datos asociados</li>
-            <li><strong>Oponerse</strong> al procesamiento de sus datos</li>
-            <li><strong>Portabilidad</strong> de sus datos a otro servicio</li>
-            <li><strong>Retirar el consentimiento</strong> en cualquier momento</li>
+            <li><strong>Cifrado en tránsito:</strong> todas las comunicaciones utilizan TLS/SSL</li>
+            <li><strong>Cifrado en reposo:</strong> datos almacenados cifrados en Firebase</li>
+            <li><strong>Autenticación segura:</strong> contraseñas hasheadas mediante bcrypt/scrypt</li>
+            <li><strong>Infraestructura segura:</strong> servidores de Google Cloud Platform con certificaciones ISO 27001, SOC 2/3</li>
+            <li><strong>Acceso restringido:</strong> acceso mínimo necesario al desarrollador (principio de mínimo privilegio)</li>
+            <li><strong>Monitoreo:</strong> detección de actividades anómalas y intentos de acceso no autorizado</li>
         </ul>
-        <p>Para ejercer estos derechos, contacte con nosotros en: <strong>braian7410@gmail.com</strong></p>
+        <p>Sin embargo, ningún método de transmisión o almacenamiento electrónico es 100% seguro. No podemos garantizar seguridad absoluta.</p>
 
-        <h2>9. PRIVACIDAD DE MENORES</h2>
-        <p>Home Task Manager no está dirigida a menores de 13 años. No recopilamos intencionadamente información de menores. Si descubrimos que hemos recopilado datos de un menor, los eliminaremos inmediatamente.</p>
+        <h2>9. SUS DERECHOS DE PRIVACIDAD</h2>
+        <p>Dependiendo de su ubicación, usted tiene diversos derechos respecto a sus datos personales:</p>
 
-        <h2>10. CAMBIOS EN ESTA POLÍTICA</h2>
-        <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Le notificaremos cualquier cambio importante mediante:</p>
+        <table class="rights-table">
+            <tr>
+                <th>Derecho</th>
+                <th>Descripción</th>
+                <th>Aplica en</th>
+            </tr>
+            <tr>
+                <td><strong>Acceso</strong></td>
+                <td>Solicitar una copia de sus datos personales que procesamos</td>
+                <td>GDPR, CCPA, LGPD, PIPEDA</td>
+            </tr>
+            <tr>
+                <td><strong>Rectificación</strong></td>
+                <td>Corregir datos inexactos o incompletos</td>
+                <td>GDPR, LGPD, PIPEDA</td>
+            </tr>
+            <tr>
+                <td><strong>Eliminación ("Derecho al Olvido")</strong></td>
+                <td>Solicitar la eliminación de sus datos personales</td>
+                <td>GDPR, CCPA, LGPD</td>
+            </tr>
+            <tr>
+                <td><strong>Portabilidad</strong></td>
+                <td>Recibir sus datos en formato estructurado y transferirlos a otro proveedor</td>
+                <td>GDPR, LGPD</td>
+            </tr>
+            <tr>
+                <td><strong>Oposición</strong></td>
+                <td>Oponerse al procesamiento de sus datos</td>
+                <td>GDPR, LGPD</td>
+            </tr>
+            <tr>
+                <td><strong>Restricción</strong></td>
+                <td>Limitar cómo usamos sus datos en ciertas circunstancias</td>
+                <td>GDPR</td>
+            </tr>
+            <tr>
+                <td><strong>No Venta (Opt-Out)</strong></td>
+                <td>Optar por no vender sus datos (no aplicable, no vendemos datos)</td>
+                <td>CCPA/CPRA</td>
+            </tr>
+            <tr>
+                <td><strong>No Discriminación</strong></td>
+                <td>No ser discriminado por ejercer sus derechos de privacidad</td>
+                <td>CCPA/CPRA</td>
+            </tr>
+            <tr>
+                <td><strong>Retirar Consentimiento</strong></td>
+                <td>Retirar su consentimiento en cualquier momento</td>
+                <td>GDPR, LGPD, PIPEDA</td>
+            </tr>
+            <tr>
+                <td><strong>Presentar Queja</strong></td>
+                <td>Presentar una queja ante autoridad de protección de datos</td>
+                <td>GDPR, LGPD</td>
+            </tr>
+        </table>
+
+        <h3>Cómo ejercer sus derechos</h3>
+        <p>Para ejercer cualquiera de estos derechos, puede:</p>
         <ul>
-            <li>Notificación dentro de la aplicación</li>
-            <li>Correo electrónico a su cuenta registrada</li>
+            <li>Enviar un correo electrónico a: <strong>braian7410@gmail.com</strong></li>
+            <li>Utilizar las opciones dentro de la aplicación (Configuración > Privacidad)</li>
         </ul>
-        <p>La fecha de "última actualización" al inicio de este documento indica cuándo se realizó la última modificación.</p>
+        <p>Responderemos a su solicitud dentro de <strong>30 días</strong> (GDPR, LGPD) o <strong>45 días</strong> (CCPA). Podemos solicitar verificación de identidad antes de procesar su solicitud.</p>
 
-        <h2>11. LEGISLACIÓN APLICABLE</h2>
-        <p>Esta Política de Privacidad se rige por las leyes de Colombia y cumple con:</p>
+        <h2>10. PRIVACIDAD DE MENORES</h2>
+        <p>Home Task Manager <strong>no está dirigida a menores de 13 años</strong> (o 16 años en la UE). No recopilamos intencionadamente información de menores de edad.</p>
+        <p>Si descubrimos que hemos recopilado datos de un menor sin consentimiento parental verificable:</p>
         <ul>
-            <li>Ley 1581 de 2012 (Protección de Datos Personales en Colombia)</li>
-            <li>Decreto 1377 de 2013</li>
-            <li>Reglamento General de Protección de Datos (RGPD) para usuarios de la Unión Europea</li>
+            <li>Eliminaremos inmediatamente toda la información</li>
+            <li>Cerraremos la cuenta asociada</li>
+            <li>Notificaremos a las autoridades si es legalmente requerido</li>
+        </ul>
+        <p>Si es padre/madre y descubre que su hijo menor ha proporcionado información personal, contáctenos inmediatamente en: <strong>braian7410@gmail.com</strong></p>
+
+        <h2>11. COOKIES Y TECNOLOGÍAS DE RASTREO</h2>
+        <p>La aplicación móvil utiliza tecnologías de rastreo limitadas:</p>
+        <ul>
+            <li><strong>Tokens de sesión:</strong> para mantener su sesión activa (Firebase Authentication)</li>
+            <li><strong>Identificadores publicitarios:</strong> para mostrar anuncios relevantes (AdMob)</li>
+            <li><strong>Tokens de notificaciones:</strong> para enviar notificaciones push (FCM)</li>
+        </ul>
+        <p><strong>No utilizamos cookies web</strong> ya que es una aplicación móvil nativa. Para gestionar el rastreo publicitario, puede:</p>
+        <ul>
+            <li><strong>Android:</strong> Configuración > Google > Anuncios > Restablecer ID de publicidad o activar "Desactivar personalización de anuncios"</li>
         </ul>
 
-        <h2>12. CONTACTO</h2>
+        <h2>12. CAMBIOS EN ESTA POLÍTICA</h2>
+        <p>Podemos actualizar esta Política de Privacidad ocasionalmente para reflejar cambios en:</p>
+        <ul>
+            <li>Nuestras prácticas de privacidad</li>
+            <li>Funcionalidades de la aplicación</li>
+            <li>Requisitos legales o regulatorios</li>
+        </ul>
+        <p>Le notificaremos cambios importantes mediante:</p>
+        <ul>
+            <li><strong>Notificación dentro de la aplicación</strong> al iniciar sesión</li>
+            <li><strong>Correo electrónico</strong> a su cuenta registrada (para cambios materiales)</li>
+            <li>Actualización de la fecha de "última actualización" en esta página</li>
+        </ul>
+        <p>Su uso continuado de la aplicación después de cambios constituye aceptación de la política actualizada.</p>
+
+        <h2>13. LEGISLACIÓN APLICABLE Y JURISDICCIÓN</h2>
+        <p>Esta Política de Privacidad cumple con múltiples marcos legales internacionales:</p>
+        <ul>
+            <li><strong>Unión Europea / EEE / Reino Unido:</strong> Reglamento General de Protección de Datos (GDPR) - Reglamento (UE) 2016/679</li>
+            <li><strong>California, Estados Unidos:</strong> California Consumer Privacy Act (CCPA) y California Privacy Rights Act (CPRA)</li>
+            <li><strong>Brasil:</strong> Lei Geral de Proteção de Dados (LGPD) - Ley 13.709/2018</li>
+            <li><strong>Canadá:</strong> Personal Information Protection and Electronic Documents Act (PIPEDA)</li>
+            <li><strong>Colombia:</strong> Ley 1581 de 2012 (Protección de Datos Personales) y Decreto 1377 de 2013</li>
+        </ul>
+        <p>En caso de conflicto, prevalecerán las leyes de protección de datos de su jurisdicción específica.</p>
+
+        <h3>Autoridades de protección de datos</h3>
+        <p>Tiene derecho a presentar una queja ante la autoridad de protección de datos de su país:</p>
+        <ul>
+            <li><strong>UE/EEE:</strong> Su autoridad nacional de protección de datos (<a href="https://edpb.europa.eu/about-edpb/about-edpb/members_es" target="_blank">lista completa</a>)</li>
+            <li><strong>Reino Unido:</strong> Information Commissioner's Office (ICO) - <a href="https://ico.org.uk" target="_blank">ico.org.uk</a></li>
+            <li><strong>Brasil:</strong> Autoridade Nacional de Proteção de Dados (ANPD) - <a href="https://www.gov.br/anpd" target="_blank">gov.br/anpd</a></li>
+            <li><strong>Colombia:</strong> Superintendencia de Industria y Comercio (SIC) - <a href="https://www.sic.gov.co" target="_blank">sic.gov.co</a></li>
+            <li><strong>California:</strong> California Attorney General - <a href="https://oag.ca.gov/privacy" target="_blank">oag.ca.gov/privacy</a></li>
+        </ul>
+
+        <h2>14. INFORMACIÓN ESPECÍFICA PARA RESIDENTES DE CALIFORNIA</h2>
+        <p>Si es residente de California, bajo CCPA/CPRA tiene derecho a conocer:</p>
+        
+        <h3>Categorías de información personal recopilada (últimos 12 meses):</h3>
+        <ul>
+            <li>Identificadores (nombre, email)</li>
+            <li>Información comercial (tareas, listas creadas)</li>
+            <li>Actividad de internet (interacciones con anuncios)</li>
+            <li>Información del dispositivo (modelo, sistema operativo)</li>
+        </ul>
+
+        <h3>Fuentes de información personal:</h3>
+        <ul>
+            <li>Directamente de usted (cuando crea una cuenta)</li>
+            <li>Automáticamente a través del uso de la aplicación</li>
+            <li>De terceros (AdMob para identificadores publicitarios)</li>
+        </ul>
+
+        <h3>Propósitos comerciales para recopilar información personal:</h3>
+        <ul>
+            <li>Proporcionar y mantener nuestros servicios</li>
+            <li>Procesar sus solicitudes</li>
+            <li>Mejorar la aplicación</li>
+            <li>Mostrar publicidad</li>
+            <li>Detectar y prevenir fraudes</li>
+        </ul>
+
+        <h3>Categorías de terceros con quienes compartimos información:</h3>
+        <ul>
+            <li>Proveedores de servicios en la nube (Firebase)</li>
+            <li>Redes publicitarias (AdMob)</li>
+        </ul>
+
+        <p><strong>No vendemos información personal</strong> y no lo hemos hecho en los últimos 12 meses. <strong>No compartimos información personal</strong> para publicidad comportamental cruzada según la definición de CPRA.</p>
+
+        <h2>15. CONTACTO Y RESPONSABLE DEL TRATAMIENTO</h2>
         <div class="contact-box">
-            <p>Si tiene preguntas sobre esta Política de Privacidad o sobre cómo manejamos sus datos, contáctenos:</p>
-            <p><strong>Responsable del tratamiento:</strong><br>Braian Stiven Peña Morales</p>
-            <p><strong>Correo electrónico:</strong><br><a href="mailto:braian7410@gmail.com">braian7410@gmail.com</a></p>
-            <p><strong>Aplicación:</strong><br>Home Task Manager</p>
+            <p>Si tiene preguntas, inquietudes o desea ejercer sus derechos de privacidad, contáctenos:</p>
+            
+            <p><strong>Responsable del tratamiento / Data Controller / Controlador:</strong><br>
+            Braian Stiven Peña Morales</p>
+            
+            <p><strong>Correo electrónico:</strong><br>
+            <a href="mailto:braian7410@gmail.com">braian7410@gmail.com</a></p>
+            
+            <p><strong>Aplicación:</strong><br>
+            Home Task Manager</p>
+            
+            <p><strong>Tiempo de respuesta:</strong><br>
+            Responderemos a su solicitud dentro de 30 días (GDPR/LGPD) o 45 días (CCPA)</p>
         </div>
+
+        <hr style="margin: 40px 0; border: none; border-top: 2px solid #ecf0f1;">
+        
+        <p style="text-align: center; color: #7f8c8d; font-size: 0.9em;">
+            Esta política de privacidad está diseñada para cumplir con las leyes de protección de datos de múltiples jurisdicciones. 
+            Si alguna disposición de esta política entra en conflicto con las leyes locales aplicables, prevalecerá la ley local.
+        </p>
     </div>
 </body>
 </html>
